@@ -1,0 +1,6 @@
+Flask
+Werkzeug
+numpy
+python-dotenv
+gunicorn
+requests

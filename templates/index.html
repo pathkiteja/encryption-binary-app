@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Caesar Cipher & Binary Converter 🔐</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body class="dark-mode">
+
+<div class="wrapper">
+    <!-- Main Container -->
+    <div class="container">
+        <!-- 🌙☀️ Dark/Light Mode Toggle Inside Main Container -->
+        <div class="toggle-container">
+            <button class="mode-toggle" onclick="toggleMode()">🌙</button>
+        </div>
+
+        <h1>🔐 Caesar Cipher Tool</h1>
+
+        <!-- Binary Converter Button -->
+        <button class="binary-btn" onclick="toggleBinary()">Convert Number to Binary ➡️</button>
+
+        <!-- Binary Converter Form -->
+        <div class="binary-container" id="binaryContainer">
+            <form method="POST">
+                <input type="number" name="binary_input" placeholder="Enter a number..." required>
+                <button type="submit">Convert to Binary</button>
+            </form>
+        </div>
+
+        <!-- Caesar Cipher Form -->
+        <form method="POST">
+            <textarea name="input_text" rows="4" placeholder="Enter text..." required></textarea>
+            <input type="number" name="key" placeholder="Key 🔑 (e.g., 3)" required>
+            <select name="mode">
+                <option value="encode">Encrypt 🔒</option>
+                <option value="decode">Decrypt 🔓</option>
+            </select>
+            <button type="submit">Apply 🔐</button>
+        </form>
+    </div>
+
+    <!-- Results Container -->
+    <div class="result-wrapper">
+        {% if result %}
+        <div class="result-container">
+            <h2>📄 Caesar Cipher Result</h2>
+            <div class="result-text">{{ result }}</div>
+        </div>
+        {% endif %}
+
+        {% if binary_result %}
+        <div class="result-container">
+            <h2>📄 Binary Result</h2>
+            <div class="result-text">{{ binary_result }}</div>
+        </div>
+        {% endif %}
+    </div>
+</div>
+
+<!-- JavaScript for Toggling Modes and Binary Input -->
+<script>
+    function toggleBinary() {
+        const container = document.getElementById("binaryContainer");
+        container.style.display = (container.style.display === "none" || container.style.display === "") ? "block" : "none";
+    }
+
+    function toggleMode() {
+        const body = document.body;
+        const button = document.querySelector('.mode-toggle');
+        body.classList.toggle("light-mode");
+        body.classList.toggle("dark-mode");
+
+        button.textContent = body.classList.contains("light-mode") ? "☀️" : "🌙";
+    }
+</script>
+
+</body>
+</html>

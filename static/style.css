@@ -1,0 +1,102 @@
+/* 🌙 Dark Mode (Default) */
+body.dark-mode {
+    background-color: #121212;
+    color: #ffffff;
+}
+
+/* ☀️ Light Mode */
+body.light-mode {
+    background-color: #f0f0f0;
+    color: #000000;
+}
+
+/* Layout */
+.wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    height: 100vh;
+}
+
+/* Main Container (Centered) */
+.container {
+    width: 450px;
+    padding: 40px;
+    border-radius: 15px;
+    background-color: #000000;
+    box-shadow: 0 0 30px rgba(0, 255, 255, 0.4);
+    text-align: center;
+    position: relative;
+}
+
+/* Light Mode Styling for Main Container */
+body.light-mode .container {
+    background-color: #ffffff;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Result Container (Right Side) */
+.result-wrapper {
+    width: 450px;
+}
+
+.result-container {
+    width: 100%;
+    padding: 40px;
+    border-radius: 15px;
+    background-color: #000000;
+    box-shadow: 0 0 30px rgba(0, 255, 255, 0.4);
+    text-align: center;
+    color: #ffffff;
+    margin-bottom: 20px;
+}
+
+body.light-mode .result-container {
+    background-color: #ffffff;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    color: #000;
+}
+
+/* Inputs and Buttons */
+textarea, input, select, button {
+    width: 100%;
+    padding: 12px;
+    margin-top: 12px;
+    border-radius: 10px;
+    border: none;
+    background-color: #111111;
+    color: #ffffff;
+}
+
+body.light-mode textarea, 
+body.light-mode input, 
+body.light-mode select {
+    background-color: #f0f0f0;
+    color: #000;
+}
+
+button {
+    background-color: #00ffff;
+    color: #000;
+    font-weight: bold;
+}
+
+button:hover {
+    background-color: #00bfbf;
+}
+
+/* 🌙☀️ Dark/Light Mode Toggle Button (Inside Container) */
+.toggle-container {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+
+.mode-toggle {
+    padding: 5px 10px;
+    font-size: 18px;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
